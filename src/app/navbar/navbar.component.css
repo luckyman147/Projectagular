@@ -1,0 +1,37 @@
+.custom-btn {
+    padding: 10px 20px; 
+    background-color: aqua;
+    border-color: black;
+    border-width: 2px;
+    font-size: 15;
+    font-weight: 700;
+  }
+  .navbar{
+    max-height: 100px;
+    border-radius: 10px;
+  }
+  .nav-link{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .nav-link:hover {
+    font-size: 1.2em; /* Increase font size on hover */
+  }
+  
+  .active-link {
+    color: rgb(76, 0, 255); /* Highlight active link with red color */
+    font-weight: bold; /* Make active link bold */
+  }
+  .bg {
+    background-image: linear-gradient(to left, rgb(255, 255, 255), rgb(224, 220, 254));
+  }
+  .mr-5{
+    margin-right: 15px;
+  
+  }
+  .button{
+    border-width:2px ;
+    border-color: black;
+  }
+  .image{
+    size: 20;
+  }

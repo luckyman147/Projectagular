@@ -1,0 +1,46 @@
+<!-- login.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title text-center">Login</h1>
+  <div *ngIf="wrong.length!=0">
+    <div class="alert alert-danger" role="alert">
+      {{wrong}}
+    </div>
+  </div>
+            <!-- Form using NgForm -->
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+              <!-- Username field -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" class="form-control" id="email" name="email"  placeholder="Enter your Email" required ngModel>
+              </div>
+  
+              <!-- Password field -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password"  placeholder="Enter your password" required ngModel>
+              </div>
+  
+              <!-- Forgot Password link -->
+              <div class="mb-3 text-end">
+                <a href="#" class="text-decoration-none">Forgot Password?</a>
+              </div>
+  
+              <!-- Login button -->
+              <button class="btn btn-primary btn-block" type="submit" >Login</button>
+            </form>
+          </div>
+        </div>
+        <div class="container mt-5 text-center">
+          <p class="d-inline-block mb-0"> Don't have an account?   </p>
+          <a routerLink="/Register" class="d-inline-block"> Register</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,38 @@
+<!-- navigation.component.html -->
+
+<nav class="navbar navbar-expand bg">
+  <div class="container-fluid">
+    <!-- Left Section -->
+  
+    <!-- Logo and Toggle Button -->
+    <img src="assets/image/FootIn-removebg-preview.png" alt="logo" style="width: 120px; height: 120px;" class="image">
+  
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto"> <!-- Align links to the right -->
+        <li class="nav-item">
+          <a class="nav-link text" routerLink="/accueil" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+        </li>
+        <li *ngIf=" (decodedToken.role =='teacher')" class="nav-item">
+          <a class="nav-link text" routerLink="/addCourse" routerLinkActive="active-link">Add Course</a>
+        </li>
+        <li *ngIf="(decodedToken.role =='admin') " class="nav-item">
+
+          <a class="nav-link text" routerLink="/list-students" routerLinkActive="active-link">List Etudiants</a>
+        </li><li *ngIf="(decodedToken.role =='admin') " class="nav-item">
+
+          <a class="nav-link text" routerLink="/list-course" routerLinkActive="active-link">List course</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="d-flex align-items-center ">
+      <div *ngIf="connected === null || connected === undefined || connected === false">
+        <a routerLink="Login" class="btn btn-info custom-btn" (click)="login()">Login</a>
+      </div>
+      <div *ngIf="connected" class="mr-5">
+        <button class="btn btn-danger button" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>

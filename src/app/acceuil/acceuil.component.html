@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <div class="row">
+      <div class="col text-center" *ngIf="(decodedToken.role =='admin')||(decodedToken.role=='teacher')">    
+          <div class="input-group mb-3 mt-3">
+          <input type="text" class="form-control" [(ngModel)]="vfilter" placeholder="Search Courses" aria-label="Search Courses" >
+          <button class="btn btn-primary" type="button" id="button-search">Search</button>
+        </div>
+        <div *ngIf="(decodedToken.role =='admin')||(decodedToken.role=='teacher')" class="margin">
+
+            <h1 class="text">Welcome Back, Mr {{decodedToken.Studentname}} </h1>
+        </div><div *ngIf="decodedToken.role =='student'" class="margin">
+
+            <h1 class="text">Welcome Back, {{decodedToken.Studentname}} </h1>
+        </div>
+        <img src="assets/image/image.jfif" alt="image" *ngIf="decodedToken.role=='student'" class="main_page">
+  
+      </div>
+    </div>
+    <h2>A broad selection of courses
+    </h2>
+    <p>Discover new courses </p>
+    <nav class="navbar navbar-expand-sm bg-white navbar-red">
+      <div class="container-fluid">
+        <!-- Left Section -->
+      
+    
+        <!-- Logo and Toggle Button -->
+  
+      
+    
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto"> <!-- Align links to the right -->
+            <li class="nav-item">
+              <button class="nav-link " (click)="getall()"> All</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" (click)="find('python')"  >Python</button>
+            </li>
+            <li class="nav-item"><button class="nav-link" (click)="find('java')" >Java</button></li>
+            <li class="nav-item"><button class="nav-link" (click)="find('go')" >Go</button></li>
+         
+          </ul>
+        </div>
+      
+      </div>
+    </nav>
+    <div *ngIf="coursesCopy.length==0">
+      <h1 class="text">No Courses Found</h1>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let course of coursesCopy">
+        <div class="card mb-10 h-100 w-80 ">
+          
+          <div class="card-body bg">
+            <h5 class="card-title text">{{ course.Subject }}</h5>
+            <p class="card-text flex-grow-1">{{ course.contenu }}</p>
+            <p class="card-text"><small class="text-muted">Price: {{ course.fee }}</small></p>
+            <!-- <p class="card-text"><small class="text-muted">Instructor: {{ course.instructor }}</small></p> -->
+            <a class="btn btn-secondary" [routerLink]="['/Coursedetails', course.id]">Show Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-mt-5">
+
+        <h2 class="mt-5">Top Subjects</h2>
+        <app-subjects></app-subjects>
+    </div>
+  </div>

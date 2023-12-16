@@ -1,0 +1,32 @@
+{
+  "produit": [
+    {
+      "id": 1,
+      "nom": "clavier",
+      "prix": 100,
+      "quantite": 6,
+      "urlImg": "./assets/image/clavier.jfif"
+    },
+    {
+      "id": 2,
+      "nom": "souris",
+      "prix": 50,
+      "quantite": 0,
+      "urlImg": "./assets/image/souris.jfif"
+    },
+    {
+      "id": 3,
+      "nom": "Imprimente",
+      "prix": 200,
+      "quantite": 5,
+      "urlImg": "./assets/image/OIP.jfif"
+    },
+    {
+      "'id": "",
+      "'nom": "sd",
+      "prix": 2,
+      "quantite": 2,
+      "id": 8
+    }
+  ]
+}

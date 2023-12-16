@@ -1,0 +1,18 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  .con{
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+  }

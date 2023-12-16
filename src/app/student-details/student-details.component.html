@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Student Detail</h1>
+    <div class="row">
+      <div class="col-md-5 offset-md-3">
+        <div class="card">
+          <div class="card-body  ">
+            <h1 class="card-title text-center ">{{ Student.Studentname }}</h1>
+            <h5 class="card-text mt-3 fs-16  text-center" >{{ Student.email }}</h5>
+            <p class="card-text  fs-16 mt-3">Phone:{{Student.Phone}}</p>
+            <div class="row mb-5 ">
+
+                <p class="card-text fs-16 mt-3 ml-5">Role : {{ Student.role }}</p>
+                <p class="card-text fs-16 mt-3 ml-5">Sex: {{ Student.Sex }}</p>
+                <p class="card-text fs-16 mt-3 ml-5">Adress: {{ Student.Adress }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+
+                <a class="btn btn-primary " routerLink="/list-students">Back to Students</a>
+                <button class="btn bg ml-5" (click)="displ()" >Update</button>
+            </div>
+            <div *ngIf="displayUpdate">
+                <form (ngSubmit)="onSubmit(updateForm)" #updateForm="ngForm">
+                            <!-- Username field -->
+        <div class="mb-3 mt-5">
+            <label for="username" class="form-label">Studentname:</label>
+            <input type="text" class="form-control" id="username" name="Studentname" [(ngModel)]= Student.Studentname required>
+        </div>
+
+        <!-- Email field -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="Student.email" required>
+        </div> 
+        <div class="mb-3">
+            <label for="Phone" class="form-label">Phone:</label>
+            <input type="text" class="form-control" id="Phone" name="Phone" [(ngModel)]="Student.Phone" required>
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">Role:</label>
+            <input type="text" class="form-control" id="role" name="role" [(ngModel)]="Student.role" required>
+        </div>
+
+
+
+        <!-- Other fields go here with default values -->
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

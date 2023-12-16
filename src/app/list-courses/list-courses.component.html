@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<h1 class="text">List of Courses</h1>
+<input type="text" [(ngModel)]="vfilter" id="" class="search" placeholder="Search a user">
+
+<table  class="table table-striped" *ngIf="CoursesCopy !=null else vide ">
+    <thead>
+
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                Subject
+                
+            </th><th>
+                Contenu
+                
+            </th>
+            <th>
+                Number_stars
+            </th>
+            
+            <th>
+             Fee( dt)
+                
+            </th>
+            
+                <th>Action</th>
+            
+        </tr>
+    </thead>
+    <tbody >
+
+        <tr *ngFor="let s of CoursesCopy">
+            <td>{{s.id}}</td>
+         <td>{{s.Subject}}</td>
+
+            
+            <td>{{s.contenu }}</td>
+            <td>
+                {{s.Number_Stars}}
+            </td>
+            <td>{{s.fee}} DT</td>
+            <td>
+                <div class="d-flex  ml-4">
+              
+                  <a [routerLink]="['/Coursedetails', s.id]" class="btn btn-info  pd-4">
+                    View Details
+                  </a>
+              
+                  <!-- Add margin between buttons -->
+                  <div class="ml-5"></div>
+              
+                  <button (click)="delete(s.id)" class="btn btn-danger">
+                    Supprimer
+                  </button>
+                </div>
+              </td>
+              
+
+              
+            </tr>
+        </tbody>
+</table>
+<ng-template #vide ><h2>Course est vide</h2></ng-template>

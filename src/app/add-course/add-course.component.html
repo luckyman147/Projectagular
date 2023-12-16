@@ -1,0 +1,41 @@
+<!-- three-inputs.component.html -->
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Enter Information of Course</h5>
+  
+            <!-- Input 1 -->
+<form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+
+    <!-- Input 2 -->
+    <div class="mb-3">
+        <label for="Subject" class="form-label">Subject:</label>
+              <input type="text" class="form-control" id="Subject" name="Subject" ngModel required>
+            </div>
+            <div *ngIf="wrongPl.length!=0">
+                <div class="alert alert-danger" role="alert">
+                    {{wrongPl}}
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="contenu" class="form-label">Contenu:</label>
+                <textarea class="form-control" id="contenu" name="contenu" placeholder="Describe your course" rows="7" ngModel required=""></textarea>
+              </div>
+            <!-- Input 3 -->
+            <div class="mb-3">
+              <label for="fee" class="form-label">Fee:</label>
+                <input type="number" class="form-control" id="fee" name="fee" ngModel required>
+<!-- <textarea name="fee" id="fee" placeholder="Describe your Course" rows="4" ngModel required></textarea> -->
+            </div>
+  
+            <button class="btn btn-primary" >Submit</button>
+        </form>            
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  
